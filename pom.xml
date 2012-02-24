@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>dunse</groupId>
+  <artifactId>Flotr2JF</artifactId>
+  <version>0.2-SNAPSHOT</version>
+	<dependencies>
+		<dependency>
+			<groupId>dunse</groupId>
+			<artifactId>FlotJF</artifactId>
+			<version>0.2-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>5</source>
+					<target>5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.8.1</version>
+				<configuration>
+					<docfilessubdirs />
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+						    <!-- switch on dependency-driven aggregation -->
+						    <includeDependencySources>true</includeDependencySources>
+						    
+						    <dependencySourceExcludes>
+						        <!-- exclude ONLY commons-cli artifacts -->
+						        <dependencySourceExclude>com.google.code.gson:*</dependencySourceExclude>
+						    </dependencySourceExcludes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<name>Flotr2JF</name>
+	<url>https://github.com/dunse/Flotr2JF</url>
+	<description>This is a Java Framework for Flotr2.
+
+Its main purpose is to simplify backend coding for generating graphs using Flotr2.</description>
+	<licenses>
+		<license>
+			<name>GNU GENERAL PUBLIC LICENSE (GPLv3)</name>
+			<url>http://www.opensource.org/licenses/gpl-3.0.html</url>
+			<comments>The GNU GPL permits use of this library in free but not proprietary programs</comments>
+		</license>
+	</licenses>
+	<scm>
+		<connection>scm:git:git://github.com/dunse/Flotr2JF.git</connection>
+		<url>http://github.com/dunse/Flotr2JF</url>
+	</scm>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+</project>
