@@ -7,7 +7,7 @@ Flotr2JF is a extension to [FlotJF](https://github.com/dunse/FlotJF)
 
 
 _Please note that javadoc have been put together based on documentation found
-here: [http://people.iola.dk/olau/flot/API.txt](http://people.iola.dk/olau/flot/API.txt)_
+here: [http://people.iola.dk/olau/flot/API.txt](http://people.iola.dk/olau/flot/API.txt)
 and here: [http://www.humblesoftware.com/flotr2/documentation](http://www.humblesoftware.com/flotr2/documentation)_
 
 # Building
@@ -37,13 +37,15 @@ This will create the compiled jar under _target_ directory.
 **Dependencies:**  
 Flotr2JF is dependent on GSON which can be found [here](http://code.google.com/p/google-gson/downloads/list). (fetched by maven)
 
-Flotr2JF is dependent on FlotJF which needs to be built first.
+Flotr2JF is dependent on FlotJF which needs to be built first. (Described in _Build Flotr2JF_ above)
 
 Flotr2 is required to draw the graphs. Download Flotr2 from
 [here](http://www.github.com/HumbleSoftware/Flotr2) and unzip into WebContent/javascripts/flotr2.
 
   
 **Setup:**  
+Copy _FlotJF/target/FlotJF-*.jar_ into _WEB-INF/lib/_ of your web project.
+
 Copy _Flotr2JF/target/Flotr2JF-*.jar_ into _WEB-INF/lib/_ of your web project.
 
 Make sure _GSON's .jar_ has been included in _WEB-INF/lib/_. (See dependencies)
@@ -68,8 +70,8 @@ content:
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>FlotJF Example</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <!--[if lte IE 8]><script src="javascripts/flotr2/excanvas.min.js" type="text/javascript" charset="UTF-8"></script><![endif]-->
+    <script src="javascripts/flotr2/examples/lib/jquery-1.7.1.min.js"></script>
+    <!--[if lte IE 8]><script src="javascripts/flotr2/excanvas.js" type="text/javascript" charset="UTF-8"></script><![endif]-->
     <script src="javascripts/flotr2/flotr2.js" type="text/javascript" charset="UTF-8"></script>
     </head>
     <body>
